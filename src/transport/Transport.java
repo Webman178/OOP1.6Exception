@@ -1,7 +1,7 @@
 package transport;
 
 public abstract class Transport {
-    public abstract void passDiagnostic();
+    public abstract void passDiagnostic() throws TransportTypeException;
     private final String brand;
     private final String model;
     private double engineVolume;

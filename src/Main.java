@@ -73,10 +73,15 @@ public class Main {
         LicenseC vasya = new LicenseC("Василий", true, 5);
         LicenseD lesha = new LicenseD("Алексей", false, 14);
 
-        toyota.passDiagnostic();
-        kamaz.passDiagnostic();
-        kia.passDiagnostic();
-
+        try {
+            kamaz.passDiagnostic();
+            kia.passDiagnostic();
+            toyota.passDiagnostic();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        System.out.println("Work is done");
       /*  ivan.stopMoving(lada);
         vasya.refuel(hyundai);
         lesha.startMoving(toyota);

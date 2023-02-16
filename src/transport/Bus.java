@@ -1,13 +1,13 @@
 package transport;
 
-public class Bus extends Transport implements Competing {
-    public void passDiagnostic() {
-        try {
+public class Bus extends Transport implements Competing{
+    public void passDiagnostic() throws TransportTypeException {
+        //try {
             throw new TransportTypeException("Автобус " + getBrand() + " " + getModel() + " не может проходить диагностику");
-        } catch (TransportTypeException e) {
+       /* } catch (TransportTypeException e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
-        }
+        }*/
     }
     private Capacity capacity;
     public Bus(String brand, String model, double engineVolume, Capacity capacity) {
